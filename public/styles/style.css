@@ -120,5 +120,6 @@ button:hover{
     color: rgb(227, 14, 14);
   }
   .time{
+      font-size: smaller;
       color:blue;
   }
