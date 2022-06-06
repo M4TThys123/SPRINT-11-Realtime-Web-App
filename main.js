@@ -4,9 +4,9 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
 const bodyParser = require('body-parser')
+const compression = require('compression')
 const { name } = require('ejs')
 let users= {}
-// const formatMessage = require('./utils/messages')
 const PORT = process.env.PORT || 7000
 http.listen(PORT, () =>{ console.log(`Server running on port ${PORT}`)})
 
@@ -14,6 +14,7 @@ http.listen(PORT, () =>{ console.log(`Server running on port ${PORT}`)})
 app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(compression())
 
 // ejs template engine
 app.set('view engine', 'ejs')
