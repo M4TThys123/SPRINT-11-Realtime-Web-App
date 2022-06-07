@@ -63,11 +63,16 @@ io.on('connection', function (socket) {
     })
 
     // Disconnected
-    socket.on('disconnect', function () {
+    socket.on('disconnect', function (data) {
         // console.log('disconnect: ' + socket.id)
+        // socket.broadcast.emit('user-disconnected', users[socket.id])
         delete users[socket.id]
-        // io.emit('disconnect', socket.id)
     })
 
 
 })
+
+// socket.broadcast.emit('msg', {
+//     from: users[socket.id],
+//     message: message
+// })

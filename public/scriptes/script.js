@@ -29,7 +29,7 @@ function login(name){
         } else {
             say('You', data.message)
         } 
-    })
+    }) 
 }
 
  // Send Message $ Submit Form
@@ -41,6 +41,8 @@ function login(name){
         messageInput.value = "";
         // Send
         socket.emit('msg',message)
+
+
     }
    
     
