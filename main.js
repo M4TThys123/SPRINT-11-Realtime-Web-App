@@ -20,8 +20,6 @@ app.use(compression())
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
-// app.use(logger('li'))
-
 
 // render index
 app.get('/', (request, response) =>{

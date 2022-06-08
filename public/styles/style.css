@@ -119,6 +119,7 @@ h1{
 }
 .text{
     overflow-y: scroll;
+    font-family: sans-serif;
     font-size: 1.1em;
     margin-top: .3em;
     margin-bottom: .3em;
@@ -135,4 +136,96 @@ h1{
   .time{
       font-size: smaller;
       color:blue;
-  }
+   }
+/* Login CheckBox styling */
+.Login-Container{
+    width:50% ;
+    height: 30vh;
+    margin: 0 auto;
+    border-radius: .5em;
+    background-color:var(--lighter-blue);
+}
+.login-header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: .5em;
+    border-radius: .5em;
+    border-radius: .5em;
+    background-color: var(--background-blue);
+}
+.logo-login{
+    width:13em ;
+    height:fit-content;
+}
+/* Login form */
+#loginForm{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+.input-group{
+   margin-left: 2.9em;
+}
+
+label{
+    color: #fff;
+    font-family: sans-serif;
+    font-size:medium;
+}
+.input-login{
+    width: 80%;
+    height: 2em;
+    font-size: 1.1em;
+    padding: .5em;
+    margin-left: 0;
+    border-radius:0;
+}
+article{
+    margin-top: 1em;
+}
+#btn-success{
+    font-family: sans-serif;
+    letter-spacing: 0;
+    font-size:medium ;
+    width: 80%;
+    height: 2em;
+    background-color: #fff;
+    color: var(--text-color);
+}
+/* Mobile version */
+@media (max-width:40em) {
+    .Login-Container{
+        width: fit-content;
+    }
+    .logo-login{
+        width:80vw;
+        height:3em;
+    }
+    .message__container{
+        width: 97vw;
+        height:90vh ;
+    }
+    .text{
+        font-size: 1.5em;
+    }
+    .messagesContainer{
+        max-height:70vh;
+    }
+    .icon{
+        position: absolute;
+        right: -1em;
+        top: .2em;
+        width: 1em;
+        height: 1em;
+    }
+    .btn-outline-primary{
+        right: 2.4em;
+        top: .2em;
+        width: 19%;
+        height: 1.8em;
+        font-size:1.2em ;
+    }
+}
+
+
