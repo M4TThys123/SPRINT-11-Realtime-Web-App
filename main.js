@@ -38,7 +38,6 @@ io.on('connection', function (socket) {
             message:`${name} has joined to chat`
         })
 
-
     })
 
     // Message Recieved
@@ -68,8 +67,3 @@ io.on('connection', function (socket) {
 
 
 })
-
-// socket.broadcast.emit('msg', {
-//     from: users[socket.id],
-//     message: message
-// })
