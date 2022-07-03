@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const compression = require('compression')
 const { name } = require('ejs')
 let users= {}
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 5000
 http.listen(PORT, () =>{ console.log(`Server running on port ${PORT}`)})
 
 // statics 
