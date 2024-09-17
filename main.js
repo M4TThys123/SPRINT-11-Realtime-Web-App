@@ -4,23 +4,21 @@ const http = require('http').createServer(app)
 const io = require('socket.io')(http)
 const path = require('path')
 const bodyParser = require('body-parser')
+const compression = require('compression')
 const { name } = require('ejs')
 let users= {}
-// const formatMessage = require('./utils/messages')
-const PORT = process.env.PORT || 7000
+const PORT = process.env.PORT || 5000
 http.listen(PORT, () =>{ console.log(`Server running on port ${PORT}`)})
 
 // statics 
 app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(compression())
 
 // ejs template engine
 app.set('view engine', 'ejs')
 app.set('views', './views')
-
-// app.use(logger('li'))
-
 
 // render index
 app.get('/', (request, response) =>{
@@ -39,7 +37,6 @@ io.on('connection', function (socket) {
             from:'Coding the Curbs',
             message:`${name} has joined to chat`
         })
-
 
     })
 
@@ -62,10 +59,10 @@ io.on('connection', function (socket) {
     })
 
     // Disconnected
-    socket.on('disconnect', function () {
+    socket.on('disconnect', function (data) {
         // console.log('disconnect: ' + socket.id)
+        // socket.broadcast.emit('user-disconnected', users[socket.id])
         delete users[socket.id]
-        // io.emit('disconnect', socket.id)
     })
 
 

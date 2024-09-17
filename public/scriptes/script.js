@@ -29,7 +29,7 @@ function login(name){
         } else {
             say('You', data.message)
         } 
-    })
+    }) 
 }
 
  // Send Message $ Submit Form
@@ -41,6 +41,8 @@ function login(name){
         messageInput.value = "";
         // Send
         socket.emit('msg',message)
+
+
     }
    
     
@@ -54,14 +56,15 @@ function say(name, message) {
     li.innerHTML = 
             `<li class="message">
                 <p class="meta"><span>${name}</span></p>
-                <p class="message-span"><span>${message}</span></p>
-                <p class="time"><span>${time}</span></p>
+                <p class="text">${message}</p>
+                <p class="time"><time><span>${time}</span></time></p>
             </li>`
         
     messagesContainer.appendChild(li)
     // Scroll down to last message
     messagesContainer.scrollTop = messagesContainer.scrollHeight
 }
+
 
 
 
